@@ -40,12 +40,12 @@ int main()
         
 	namedWindow("Result", CV_WINDOW_AUTOSIZE);
 
-	string file_addr = "bike.avi";
+	string file_addr = "2.mp4";
 	Mat frame, result, prev_frame, thresh, gray_frame, gray_prev_frame, diff, blur_diff;
 	Mat temp, img, fore;
 
     VideoCapture video;
-	if (input_flag == 0)
+	if (input_flag == 1)
 		video.open(0);
 	else
 		video.open(file_addr);

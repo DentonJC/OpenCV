@@ -17,12 +17,12 @@ using namespace cv;
 
 int main()
 {
-	int mixtures = 25; //500
+	int mixtures = 3; //500
 	int shadow = 0;
     int count;
   	double area, ar;
     Mat frame, fore, img, prevImg, temp, gray, vehicle_ROI, img_temp;
-    VideoCapture cap("video2.avi");
+    VideoCapture cap("2.mp4");
     cv::Ptr<cv::BackgroundSubtractorMOG2> pMOG2 = cv::createBackgroundSubtractorMOG2();
     pMOG2 -> setNMixtures(mixtures);
     pMOG2 -> setDetectShadows(shadow);

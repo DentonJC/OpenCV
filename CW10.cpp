@@ -32,7 +32,7 @@ int main()
 		<<"1 - optical flow"<<endl;
     cin>>detector_flag;
     
-	string file_addr = "bike.avi";
+	string file_addr = "2.mp4";
 	Mat frame, result, prev_frame, thresh, gray_frame, gray_prev_frame, diff, blur_diff;
 	Mat temp, img, fore;
 	
@@ -51,7 +51,7 @@ int main()
     
     
     cv::Ptr<cv::BackgroundSubtractorMOG2> pMOG2 = cv::createBackgroundSubtractorMOG2();
-    pMOG2 -> setNMixtures(3);
+    pMOG2 -> setNMixtures(2);
     pMOG2 -> setDetectShadows(0);
     
     while (true)

@@ -20,7 +20,7 @@ int main()
     createTrackbar("history", "Object", &learningRate, 100); 
     createTrackbar("mixtures", "Object", &mixtures, 3); 
         createTrackbar("shadow", "Object", &shadow, 1); 
-        string file_addr = "video1.avi";
+        string file_addr = "2.mp4";
 
         int threshold = 50;
         int minLineLength = 50;

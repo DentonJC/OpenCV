@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>346</width>
-    <height>495</height>
+    <width>338</width>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,11 @@
       <x>0</x>
       <y>0</y>
       <width>331</width>
-      <height>441</height>
+      <height>461</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -43,50 +43,11 @@
        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>106</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&amp;Vertical</string>
-      </property>
-     </widget>
-     <widget class="QRadioButton" name="radioButton_2">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>106</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Hori&amp;zontal</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>111</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Detector mode:</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>70</y>
+        <y>160</y>
         <width>121</width>
         <height>17</height>
        </rect>
@@ -99,7 +60,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>130</y>
+        <y>220</y>
         <width>91</width>
         <height>17</height>
        </rect>
@@ -112,7 +73,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>190</y>
         <width>271</width>
         <height>16</height>
        </rect>
@@ -121,10 +82,13 @@
        <number>0</number>
       </property>
       <property name="maximum">
-       <number>100</number>
+       <number>99</number>
       </property>
       <property name="singleStep">
        <number>1</number>
+      </property>
+      <property name="value">
+       <number>20</number>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -134,7 +98,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>160</y>
+        <y>250</y>
         <width>271</width>
         <height>16</height>
        </rect>
@@ -142,8 +106,127 @@
       <property name="maximum">
        <number>1000</number>
       </property>
+      <property name="value">
+       <number>350</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Input mode:</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Camera</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_7">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&amp;Video</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Detector mode:</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&amp;Vertical</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Hori&amp;zontal</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>40</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&amp;Pause</string>
+      </property>
+      <property name="shortcut">
+       <string>Alt+P</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>110</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&amp;Debug</string>
+      </property>
+      <property name="shortcut">
+       <string>Alt+D</string>
       </property>
      </widget>
     </widget>
@@ -155,13 +238,16 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>180</y>
         <width>271</width>
         <height>16</height>
        </rect>
       </property>
       <property name="maximum">
        <number>100</number>
+      </property>
+      <property name="value">
+       <number>11</number>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -171,7 +257,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>130</y>
+        <y>200</y>
         <width>91</width>
         <height>17</height>
        </rect>
@@ -180,24 +266,11 @@
        <string>Min neighbors:</string>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_3">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>106</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&amp;Vertical</string>
-      </property>
-     </widget>
      <widget class="QDialogButtonBox" name="buttonBox_2">
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>370</y>
+        <y>390</y>
         <width>166</width>
         <height>25</height>
        </rect>
@@ -206,24 +279,11 @@
        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
       </property>
      </widget>
-     <widget class="QRadioButton" name="radioButton_4">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>40</y>
-        <width>106</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Hori&amp;zontal</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>70</y>
+        <y>150</y>
         <width>121</width>
         <height>17</height>
        </rect>
@@ -236,7 +296,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>160</y>
+        <y>230</y>
         <width>271</width>
         <height>16</height>
        </rect>
@@ -244,28 +304,18 @@
       <property name="maximum">
        <number>10</number>
       </property>
+      <property name="value">
+       <number>3</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>111</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Detector mode:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>250</y>
+        <y>320</y>
         <width>91</width>
         <height>17</height>
        </rect>
@@ -278,7 +328,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>190</y>
+        <y>260</y>
         <width>121</width>
         <height>17</height>
        </rect>
@@ -291,13 +341,16 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>280</y>
+        <y>350</y>
         <width>271</width>
         <height>16</height>
        </rect>
       </property>
       <property name="maximum">
        <number>100</number>
+      </property>
+      <property name="value">
+       <number>80</number>
       </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -307,7 +360,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>220</y>
+        <y>290</y>
         <width>271</width>
         <height>16</height>
        </rect>
@@ -315,8 +368,127 @@
       <property name="maximum">
        <number>100</number>
       </property>
+      <property name="value">
+       <number>10</number>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Input mode:</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Camera</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_5">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&amp;Video</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Detector mode:</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&amp;Vertical</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_4">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>30</y>
+         <width>106</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Hori&amp;zontal</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>40</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&amp;Pause</string>
+      </property>
+      <property name="shortcut">
+       <string>Alt+P</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>110</y>
+        <width>83</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&amp;Debug</string>
+      </property>
+      <property name="shortcut">
+       <string>Alt+D</string>
       </property>
      </widget>
     </widget>
@@ -340,7 +512,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>346</width>
+     <width>338</width>
      <height>22</height>
     </rect>
    </property>
@@ -352,8 +524,16 @@
     <addaction name="actionOpen_cascade"/>
     <addaction name="actionAbout"/>
     <addaction name="actionAbout_2"/>
+    <addaction name="action_Exit"/>
+   </widget>
+   <widget class="QMenu" name="menuControls">
+    <property name="title">
+     <string>&amp;Controls</string>
+    </property>
+    <addaction name="actionNew_output_file"/>
    </widget>
    <addaction name="menuPedestrian_Detector"/>
+   <addaction name="menuControls"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -368,7 +548,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionOpen">
    <property name="text">
-    <string>&amp;Open video</string>
+    <string>Open &amp;video</string>
    </property>
    <property name="shortcut">
     <string>Alt+V</string>
@@ -390,6 +570,22 @@
    </property>
    <property name="shortcut">
     <string>Alt+C</string>
+   </property>
+  </action>
+  <action name="action_Exit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Q</string>
+   </property>
+  </action>
+  <action name="actionNew_output_file">
+   <property name="text">
+    <string>&amp;New output file</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+N</string>
    </property>
   </action>
  </widget>

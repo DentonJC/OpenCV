@@ -41,9 +41,9 @@ int main( int argc, const char** argv )
         createTrackbar("minSize", "Capture", &minSize, 50); 
         
     VideoCapture video;
-    video.open(0);
-    video.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
-    video.set(CV_CAP_PROP_FRAME_HEIGHT, 640);
+    video.open("2.mp4");
+    //video.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
+    //video.set(CV_CAP_PROP_FRAME_HEIGHT, 640);
     Mat frame;
     Mat croppedImage;
     Rect2d ROIfun;

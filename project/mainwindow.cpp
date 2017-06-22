@@ -19,4 +19,14 @@ MainWindow::~MainWindow()
 
 
 
+void MainWindow::on_learning_rate_sliderMoved(int position)
+{
+
+}
+
+
+
+
+
+
 
