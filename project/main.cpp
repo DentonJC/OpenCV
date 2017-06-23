@@ -37,7 +37,7 @@ string cascade = "test.xml";
 
 void MainWindow::on_actionAbout_triggered()
 {
-    QMessageBox::information(this,"About","some text");
+    QMessageBox::information(this,"Instruction","Use it for the sake of good.");
 }
 
 void MainWindow::on_actionOpen_triggered()
