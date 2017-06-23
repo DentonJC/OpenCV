@@ -28,8 +28,9 @@ int minNeighbors = 3;
 int minSize = 10;
 int maxSize = 80;
 int flag_p = 1;
-int det = 0; // set to zero!
+int det = 2; // set to zero!
 char buffer[126];
+Size kernalSize (3,3);
 
 string file_addr = "test.mp4";
 string cascade = "test.xml";
@@ -200,7 +201,7 @@ int main(int argc, char *argv[])
     float LR = 0;
     float scaleFactor = 3;
     int counter = 0;
-    Mat frame, result, foreground, foreground_edges, result_haar, gray, temp, img, vehicle_ROI;
+    Mat frame, result, foreground, foreground_edges, result_haar, gray, temp, ped_ROI;
     cv::Ptr<cv::BackgroundSubtractorMOG2> pMOG2 = cv::createBackgroundSubtractorMOG2();
     vector<Rect> human;
     VideoCapture video;
@@ -287,13 +288,13 @@ int main(int argc, char *argv[])
             pMOG2 -> setDetectShadows(shadow);
             pMOG2 -> apply(frame, foreground, LR);
 
-            Size kernalSize (3,3);
+
             //morphological opening (removes small objects from the foreground)
-            erode(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-            dilate(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+            erode(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, kernalSize) );
+            dilate(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, kernalSize) );
             //morphological closing (removes small holes from the foreground)
-            dilate(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-            erode(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+            dilate(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, kernalSize) );
+            erode(foreground, foreground, getStructuringElement(MORPH_ELLIPSE, kernalSize) );
 
             /// Detect edges using canny
             Canny(foreground, foreground_edges, 200, 250, 3);
@@ -321,19 +322,19 @@ int main(int argc, char *argv[])
             vector<Rect> boundRect(contours.size());
 
             cvtColor(frame, gray, CV_BGR2GRAY);
-            gray.convertTo(temp, CV_8U);
-            bilateralFilter(temp, img, 5, 20, 20);
+            //gray.convertTo(gray, CV_8U);
+            //bilateralFilter(gray, gray, 5, 20, 20);
             for(size_t i = 0; i < contours.size(); i++ )
             {
                 approxPolyDP( Mat(contours[i]), contours_poly[i], 10, true );
                 boundRect[i] = boundingRect( Mat(contours_poly[i]) );
 
-                vehicle_ROI = img(boundRect[i]);
+                ped_ROI = gray(boundRect[i]);
                 area = contourArea(contours[i], false);
-                ar = vehicle_ROI.cols/vehicle_ROI.rows;
+                ar = ped_ROI.cols/ped_ROI.rows;
 
 
-                if(area > 450.0 && ar > 0.8)
+                if(area > area_size)
                 {
                     rectangle(result, boundRect[i].tl(), boundRect[i].br(), Scalar(255,0,0), 2, 8, 0 );
                     circle(result, Point(boundRect[i].x + boundRect[i].width/2, boundRect[i].y + boundRect[i].height/2), 4, Scalar(0, 255, 0), -1, 8, 0 );
